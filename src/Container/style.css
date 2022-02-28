@@ -1,0 +1,7 @@
+.container {
+    flex-basis: 650px;
+    margin: 15px;
+    padding: 20px 50px;
+    background-color: #042900;
+    box-shadow: 1px 1px 20px black
+}

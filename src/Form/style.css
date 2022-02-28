@@ -1,0 +1,41 @@
+.form__fieldset {
+    border: 3px solid #ccc;
+    padding: 0px 25px;
+    margin: 20px 0px 0px;
+}
+
+.form__legend {
+    text-align: left;
+    padding: 0px 10px 0px 5px;
+    font-size: 20px;
+}
+
+.form__paragraph {
+    padding: 5px;
+    font-size: 15px;
+}
+
+.form__paragraph--modified {
+    font-size: 20px;
+}
+
+.form_labelText {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    padding: 10px 0px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 10px;
+}
+
+.form__select {
+    width: 100%;
+    padding: 10px;
+}
+
+.form__result {
+    font-weight: bold;
+}
