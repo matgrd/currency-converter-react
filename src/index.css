@@ -6,7 +6,7 @@ html {
   box-sizing: inherit;
 }
 
-body {
+#root {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   display: flex;
