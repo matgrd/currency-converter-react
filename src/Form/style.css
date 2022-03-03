@@ -31,3 +31,13 @@
     width: 100%;
     padding: 10px;
 }
+
+.form__result {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__paragraphResult {
+    font-size: 20px;
+    margin: 0;
+}
