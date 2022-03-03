@@ -1,25 +1,25 @@
 import "./style.css";
 import React from "react";
 import Button from "./Button";
-import Result from "./Result";
+import RenderResult from "./RenderResult";
 import { currencies } from "../currencies";
 
 const Form = ({ calculateResult, result }) => {
   const [amount, setAmount] = React.useState("");
   const onAmountChange = (event) => setAmount(event.target.value);
 
-  const [inputCurrency, setInputCurrency] = React.useState("Złoty");
+  const [inputCurrency, setInputCurrency] = React.useState("PLN");
   const onSetInputCurrency = (event) => setInputCurrency(event.target.value);
 
   const getRateInputCurrency = () =>
-    currencies.find((currency) => currency.name === inputCurrency).rate;
+    currencies.find((currency) => currency.shortName === inputCurrency).rate;
   const rateInputCurrency = getRateInputCurrency(onSetInputCurrency);
 
-  const [outputCurrency, setOutputCurrency] = React.useState("Złoty");
+  const [outputCurrency, setOutputCurrency] = React.useState("PLN");
   const onSetOutputCurrency = (event) => setOutputCurrency(event.target.value);
 
   const getRateOutputCurrency = () =>
-    currencies.find((currency) => currency.name === outputCurrency).rate;
+    currencies.find((currency) => currency.shortName === outputCurrency).rate;
   const rateOutputCurrency = getRateOutputCurrency(onSetOutputCurrency);
 
   const onFormSubmit = (event) => {
@@ -56,8 +56,8 @@ const Form = ({ calculateResult, result }) => {
               onChange={onSetInputCurrency}
             >
               {currencies.map((curency) => (
-                <option key={curency.shortName} value={curency.name}>
-                  {curency.name}
+                <option key={curency.name} value={curency.shortName}>
+                  {curency.shortName}
                 </option>
               ))}
             </select>
@@ -72,14 +72,21 @@ const Form = ({ calculateResult, result }) => {
               onChange={onSetOutputCurrency}
             >
               {currencies.map((curency) => (
-                <option key={curency.shortName} value={curency.name}>
-                  {curency.name}
+                <option key={curency.name} value={curency.shortName}>
+                  {curency.shortName}
                 </option>
               ))}
             </select>
           </label>
         </p>
-        <Result result={result} />
+        <div className="form__result">
+          <p className="form__paragraphResult">Po przewalutowaniu otrzymasz:</p>
+          <RenderResult
+            result={result}
+            inputCurrency={inputCurrency}
+            outputCurrency={outputCurrency}
+          />
+        </div>
       </fieldset>
       <Button />
     </form>
