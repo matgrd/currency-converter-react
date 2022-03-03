@@ -25,7 +25,12 @@ const Form = ({ calculateResult, result }) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    calculateResult(amount, rateInputCurrency, rateOutputCurrency);
+    calculateResult(
+      amount,
+      rateInputCurrency,
+      rateOutputCurrency,
+      outputCurrency
+    );
   };
 
   return (
@@ -81,14 +86,10 @@ const Form = ({ calculateResult, result }) => {
         </p>
         <div className="form__result">
           <p className="form__paragraphResult">Po przewalutowaniu otrzymasz:</p>
-          <RenderResult
-            result={result}
-            inputCurrency={inputCurrency}
-            outputCurrency={outputCurrency}
-          />
+          <RenderResult result={result} />
         </div>
       </fieldset>
-      <Button />
+      <Button inputCurrency={inputCurrency} outputCurrency={outputCurrency} />
     </form>
   );
 };
