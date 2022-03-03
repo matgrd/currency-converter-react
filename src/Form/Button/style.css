@@ -11,3 +11,8 @@
 .form__button:hover {
     background-color: #ccc;
 }
+
+.form__button:disabled {
+    cursor: not-allowed;
+    color: black;
+}
