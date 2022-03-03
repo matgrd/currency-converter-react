@@ -6,9 +6,15 @@ import Form from "./Form";
 function App() {
   const [result, setResult] = React.useState();
 
-  const calculateResult = (amount, rateInputCurrency, rateOutputCurrency) => {
-    setResult(() => {
-      return (+amount * rateInputCurrency) / rateOutputCurrency;
+  const calculateResult = (
+    amount,
+    rateInputCurrency,
+    rateOutputCurrency,
+    outputCurrency
+  ) => {
+    setResult({
+      finalValue: (+amount * rateInputCurrency) / rateOutputCurrency,
+      finalCurrency: outputCurrency,
     });
   };
 
