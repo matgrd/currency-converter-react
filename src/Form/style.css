@@ -15,10 +15,6 @@
     font-size: 15px;
 }
 
-.form__paragraph--modified {
-    font-size: 20px;
-}
-
 .form_labelText {
     width: 100%;
     display: inline-block;
@@ -34,8 +30,4 @@
 .form__select {
     width: 100%;
     padding: 10px;
-}
-
-.form__result {
-    font-weight: bold;
 }
