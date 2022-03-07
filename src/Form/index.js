@@ -15,7 +15,7 @@ const Form = ({ calculateResult, result }) => {
     currencies.find((currency) => currency.shortName === inputCurrency).rate;
   const rateInputCurrency = getRateInputCurrency(onSetInputCurrency);
 
-  const [outputCurrency, setOutputCurrency] = React.useState("PLN");
+  const [outputCurrency, setOutputCurrency] = React.useState("EUR");
   const onSetOutputCurrency = (event) => setOutputCurrency(event.target.value);
 
   const getRateOutputCurrency = () =>
@@ -59,6 +59,7 @@ const Form = ({ calculateResult, result }) => {
               name="currency"
               className="form__select"
               onChange={onSetInputCurrency}
+              value={inputCurrency}
             >
               {currencies.map((curency) => (
                 <option key={curency.name} value={curency.shortName}>
@@ -75,6 +76,7 @@ const Form = ({ calculateResult, result }) => {
               name="currency"
               className="form__select"
               onChange={onSetOutputCurrency}
+              value={outputCurrency}
             >
               {currencies.map((curency) => (
                 <option key={curency.name} value={curency.shortName}>
