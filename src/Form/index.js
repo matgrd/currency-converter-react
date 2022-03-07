@@ -6,18 +6,17 @@ import { currencies } from "../currencies";
 
 const Form = ({ calculateResult, result }) => {
   const [amount, setAmount] = React.useState("");
-  const onAmountChange = (event) => setAmount(event.target.value);
-
   const [inputCurrency, setInputCurrency] = React.useState("PLN");
+  const [outputCurrency, setOutputCurrency] = React.useState("EUR");
+
+  const onAmountChange = (event) => setAmount(event.target.value);
   const onSetInputCurrency = (event) => setInputCurrency(event.target.value);
+  const onSetOutputCurrency = (event) => setOutputCurrency(event.target.value);
 
   const getRateInputCurrency = () =>
     currencies.find((currency) => currency.shortName === inputCurrency).rate;
   const rateInputCurrency = getRateInputCurrency(onSetInputCurrency);
-
-  const [outputCurrency, setOutputCurrency] = React.useState("EUR");
-  const onSetOutputCurrency = (event) => setOutputCurrency(event.target.value);
-
+  
   const getRateOutputCurrency = () =>
     currencies.find((currency) => currency.shortName === outputCurrency).rate;
   const rateOutputCurrency = getRateOutputCurrency(onSetOutputCurrency);
