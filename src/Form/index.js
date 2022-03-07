@@ -16,7 +16,7 @@ const Form = ({ calculateResult, result }) => {
   const getRateInputCurrency = () =>
     currencies.find((currency) => currency.shortName === inputCurrency).rate;
   const rateInputCurrency = getRateInputCurrency(onSetInputCurrency);
-  
+
   const getRateOutputCurrency = () =>
     currencies.find((currency) => currency.shortName === outputCurrency).rate;
   const rateOutputCurrency = getRateOutputCurrency(onSetOutputCurrency);
@@ -44,8 +44,8 @@ const Form = ({ calculateResult, result }) => {
               placeholder="Podaj kwotę w zł"
               required
               type="number"
-              step="1"
-              min="1"
+              step="0.01"
+              min="0.01"
               value={amount}
               onChange={onAmountChange}
             />
